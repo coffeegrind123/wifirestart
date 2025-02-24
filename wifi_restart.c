@@ -219,9 +219,11 @@ int main() {
                 if (needsRestart) {
                     restartInterface(hClient, pIfInfo);
                     needsRestart = false;
+                    // Reset lastState to force a new state change detection
+                    lastState = wlan_interface_state_not_ready;
+                } else {
+                    lastState = pIfInfo->isState;
                 }
-
-                lastState = pIfInfo->isState;
                 break;
             }
         }
