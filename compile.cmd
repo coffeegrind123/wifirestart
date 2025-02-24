@@ -21,7 +21,7 @@ if exist "wifi_monitor.exe" (
     echo Compilation successful!
     
     echo Copying wifi_monitor.exe to Startup folder...
-    copy /Y "wifi_monitor.exe" "C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\wifi_monitor.exe"
+    copy /Y "wifi_monitor.exe" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\wifi_monitor.exe"
     if %errorlevel% == 0 (
         echo Successfully copied to Startup folder!
     ) else (
