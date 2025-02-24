@@ -19,6 +19,14 @@ if exist "*.obj" del /f *.obj
 
 if exist "wifi_monitor.exe" (
     echo Compilation successful!
+    
+    echo Copying wifi_monitor.exe to Startup folder...
+    copy /Y "wifi_monitor.exe" "C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\wifi_monitor.exe"
+    if %errorlevel% == 0 (
+        echo Successfully copied to Startup folder!
+    ) else (
+        echo Failed to copy to Startup folder!
+    )
 ) else (
     echo Compilation failed!
 )
